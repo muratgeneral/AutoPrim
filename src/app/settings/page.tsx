@@ -11,6 +11,12 @@ interface MonthSetting {
   csdEndDate: string;
   offerStartDate: string;
   offerEndDate: string;
+  peugeotTarget?: number;
+  dealerPerc?: number;
+  teamPerc?: number;
+  managerPerc?: number;
+  consultantPerc?: number;
+  supportPerc?: number;
 }
 
 export default function SettingsPage() {
@@ -59,7 +65,7 @@ export default function SettingsPage() {
     }
   };
 
-  const handleDateChange = (id: string, field: keyof MonthSetting, value: string) => {
+  const handleDateChange = (id: string, field: keyof MonthSetting, value: string | number) => {
     setMonths(prev => 
       prev.map(m => m.id === id ? { ...m, [field]: value } : m)
     );
@@ -158,6 +164,110 @@ export default function SettingsPage() {
                             value={month.offerEndDate} 
                             onChange={(e) => handleDateChange(month.id, 'offerEndDate', e.target.value)}
                           />
+                        </div>
+                      </div>
+
+                      {/* Targets & Percentages */}
+                      <div className="pt-3 border-t border-gray-800/60">
+                        <label className="text-xs text-purple-400 font-semibold mb-3 block uppercase tracking-wider">Peugeot Hedef & Prim Oranları</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          
+                          {/* Araç Hedefi */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Araç Hedefi (Adet)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-purple-900/40 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                value={month.peugeotTarget || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'peugeotTarget', parseInt(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-purple-500/60">
+                                🎯
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Dealer % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Bayi Prim Oranı (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-purple-900/40 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                value={month.dealerPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'dealerPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-purple-500/60">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Team Base % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Ekip Prim Oranı (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.teamPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'teamPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Manager % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Müdürü (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.managerPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'managerPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Consultant % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Danışmanı (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.consultantPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'consultantPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Support % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Destek Personeli (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-purple-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.supportPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'supportPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>

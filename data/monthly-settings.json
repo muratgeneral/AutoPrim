@@ -5,7 +5,13 @@
     "csdStartDate": "2026-01-01",
     "csdEndDate": "2026-02-03",
     "offerStartDate": "2026-01-01",
-    "offerEndDate": "2026-02-01"
+    "offerEndDate": "2026-02-01",
+    "peugeotTarget": 110,
+    "managerPerc": 25,
+    "consultantPerc": 70,
+    "supportPerc": 5,
+    "dealerPerc": 1,
+    "teamPerc": 60
   },
   {
     "id": "2",

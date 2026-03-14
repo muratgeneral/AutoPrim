@@ -46,6 +46,23 @@ export default function CommissionReport() {
     const month = monthsData.find(m => m.id === selectedMonthId);
     if (!month) return;
 
+    // Validate Peugeot Settings
+    if (sirkod === "1") {
+      const isSettingsMissing = 
+        !month.dealerPerc || 
+        !month.peugeotTarget || 
+        !month.teamPerc ||
+        !month.managerPerc || 
+        !month.consultantPerc || 
+        !month.supportPerc;
+        
+      if (isSettingsMissing) {
+        setError("Seçili ay için Peugeot Hedef ve Prim Oranları eksik veya sıfır. Lütfen yandaki 'Ayarlar' sayfasından bu değerleri doldurup kaydedin.");
+        setData([]); // Clear existing data to prevent confusion
+        return;
+      }
+    }
+
     setLoading(true);
     setError(null);
     try {
@@ -57,7 +74,40 @@ export default function CommissionReport() {
       if (json.error) {
          throw new Error(json.error);
       }
-      setData(json.data || []);
+      
+      let fetchedData = json.data || [];
+      if (sirkod === "1") {
+        fetchedData = fetchedData.map((row: any) => {
+          const primeEsas = (row['Net Tutar'] || 0) - (row['Promosyon'] || 0) - (row['Kampanya Toplamı'] || 0);
+          const bayiPrim = primeEsas * ((month.dealerPerc || 0) / 100);
+          
+          // Ekip Primi Dağıtım Havuzu = (Bayi Prim * Ekip Prim Yüzdesi)
+          const ekipPrimPool = bayiPrim * ((month.teamPerc || 0) / 100);
+          
+          const sdPrim = ekipPrimPool * ((month.consultantPerc || 0) / 100);
+          const smPrim = ekipPrimPool * ((month.managerPerc || 0) / 100);
+          const destekPrim = ekipPrimPool * ((month.supportPerc || 0) / 100);
+          return {
+            ...row,
+            'Bayi Prim': bayiPrim,
+            'SD Prim': sdPrim,
+            'SM Prim': smPrim,
+            'Destek Prim': destekPrim,
+            'Bonus Prim': 0 // Varsayılan olarak 0 eklendi
+          };
+        });
+      } else {
+         fetchedData = fetchedData.map((row: any) => ({
+            ...row,
+            'Bayi Prim': 0,
+            'SD Prim': 0,
+            'SM Prim': 0,
+            'Destek Prim': 0,
+            'Bonus Prim': 0 
+          }));
+      }
+      
+      setData(fetchedData);
       setSqlQuery(json.sqlQuery || null);
     } catch (err: any) {
       setError(err.message);

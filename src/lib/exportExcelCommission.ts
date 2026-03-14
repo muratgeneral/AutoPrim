@@ -16,6 +16,11 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     { header: 'Kampanya Toplamı', key: 'Kampanya Toplamı', width: 25 },
     { header: 'Prime Esas Tutar', key: 'Prime Esas Tutar', width: 25 },
     { header: 'Satış Danışmanı', key: 'Satış Danışmanı', width: 30 },
+    { header: 'Bayi Prim', key: 'Bayi Prim', width: 20 },
+    { header: 'SD Prim', key: 'SD Prim', width: 20 },
+    { header: 'SM Prim', key: 'SM Prim', width: 20 },
+    { header: 'Destek Prim', key: 'Destek Prim', width: 20 },
+    { header: 'Bonus Prim', key: 'Bonus Prim', width: 20 },
   ];
 
   // Header Styling
@@ -40,6 +45,12 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
   let totalPromo = 0;
   let totalKampanyaSum = 0;
   let totalPrimeEsas = 0;
+  
+  let totalBayiPrim = 0;
+  let totalSdPrim = 0;
+  let totalSmPrim = 0;
+  let totalDestekPrim = 0;
+  let totalBonusPrim = 0;
 
   // Add Data
   data.forEach((row) => {
@@ -52,6 +63,12 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     totalPromo += promo;
     totalKampanyaSum += kampToplam;
     totalPrimeEsas += primeEsas;
+    
+    totalBayiPrim += row['Bayi Prim'] || 0;
+    totalSdPrim += row['SD Prim'] || 0;
+    totalSmPrim += row['SM Prim'] || 0;
+    totalDestekPrim += row['Destek Prim'] || 0;
+    totalBonusPrim += row['Bonus Prim'] || 0;
 
     const addedRow = worksheet.addRow({
       'Sıra': row['Sira'],
@@ -63,6 +80,11 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
       'Kampanya Toplamı': kampToplam,
       'Prime Esas Tutar': primeEsas,
       'Satış Danışmanı': row['Satış Danışmanı'],
+      'Bayi Prim': row['Bayi Prim'] || 0,
+      'SD Prim': row['SD Prim'] || 0,
+      'SM Prim': row['SM Prim'] || 0,
+      'Destek Prim': row['Destek Prim'] || 0,
+      'Bonus Prim': row['Bonus Prim'] || 0,
     });
 
     // Formatting currency cells
@@ -77,6 +99,11 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     
     const primeCell = addedRow.getCell('Prime Esas Tutar');
     primeCell.numFmt = '#,##0.00_"₺"';
+    
+    ['Bayi Prim', 'SD Prim', 'SM Prim', 'Destek Prim', 'Bonus Prim'].forEach((col) => {
+      const cell = addedRow.getCell(col);
+      cell.numFmt = '#,##0.00_"₺"';
+    });
   });
 
   // Add Totals Row
@@ -90,6 +117,11 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     'Kampanya Toplamı': totalKampanyaSum,
     'Prime Esas Tutar': totalPrimeEsas,
     'Satış Danışmanı': '',
+    'Bayi Prim': totalBayiPrim,
+    'SD Prim': totalSdPrim,
+    'SM Prim': totalSmPrim,
+    'Destek Prim': totalDestekPrim,
+    'Bonus Prim': totalBonusPrim,
   });
 
   totalRow.eachCell((cell, colNumber) => {
@@ -100,14 +132,14 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
       fgColor: { argb: 'FFF3F4F6' }
     };
     
-    if (colNumber === 4 || colNumber === 5 || colNumber === 7 || colNumber === 8) {
+    if (colNumber === 4 || colNumber === 5 || colNumber === 7 || colNumber === 8 || colNumber >= 10) {
        cell.numFmt = '#,##0.00_"₺"';
     }
   });
 
   // Add Metadata Title
   worksheet.insertRow(1, [`Prim Raporu (${startDate} - ${endDate})`]);
-  worksheet.mergeCells('A1:I1');
+  worksheet.mergeCells('A1:N1');
   const titleCell = worksheet.getCell('A1');
   titleCell.font = { size: 14, bold: true };
   titleCell.alignment = { vertical: 'middle', horizontal: 'center' };

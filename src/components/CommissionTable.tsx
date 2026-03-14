@@ -22,6 +22,11 @@ export function CommissionTable({ data }: Props) {
               <th className="px-6 py-4 font-semibold text-right">Kampanya Toplamı</th>
               <th className="px-6 py-4 font-semibold text-right">Prime Esas Tutar</th>
               <th className="px-6 py-4 font-semibold">Satış Danışmanı</th>
+              <th className="px-6 py-4 font-semibold text-right">Bayi Prim</th>
+              <th className="px-6 py-4 font-semibold text-right">SD Prim</th>
+              <th className="px-6 py-4 font-semibold text-right">SM Prim</th>
+              <th className="px-6 py-4 font-semibold text-right">Destek Prim</th>
+              <th className="px-6 py-4 font-semibold text-right">Bonus Prim</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-800/60">
@@ -56,6 +61,21 @@ export function CommissionTable({ data }: Props) {
                 </td>
                 <td className="px-6 py-4 font-medium text-gray-200">
                   {row['Satış Danışmanı']}
+                </td>
+                <td className="px-6 py-4 text-right font-medium text-purple-400">
+                  {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['Bayi Prim'] || 0)}
+                </td>
+                <td className="px-6 py-4 text-right font-medium text-emerald-400">
+                  {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['SD Prim'] || 0)}
+                </td>
+                <td className="px-6 py-4 text-right font-medium text-blue-400">
+                  {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['SM Prim'] || 0)}
+                </td>
+                <td className="px-6 py-4 text-right font-medium text-gray-400">
+                  {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['Destek Prim'] || 0)}
+                </td>
+                <td className="px-6 py-4 text-right font-medium text-amber-500">
+                  {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['Bonus Prim'] || 0)}
                 </td>
               </tr>
             ))}
