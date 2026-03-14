@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "name": "Ocak",
+    "csdStartDate": "2026-01-01",
+    "csdEndDate": "2026-02-03",
+    "offerStartDate": "2026-01-01",
+    "offerEndDate": "2026-02-01"
+  },
+  {
+    "id": "2",
+    "name": "Şubat",
+    "csdStartDate": "2026-02-01",
+    "csdEndDate": "2026-03-04",
+    "offerStartDate": "2026-02-01",
+    "offerEndDate": "2026-03-03"
+  },
+  {
+    "id": "3",
+    "name": "Mart",
+    "csdStartDate": "2026-03-01",
+    "csdEndDate": "2026-04-01",
+    "offerStartDate": "2026-03-01",
+    "offerEndDate": "2026-04-01"
+  },
+  {
+    "id": "4",
+    "name": "Nisan",
+    "csdStartDate": "2026-04-01",
+    "csdEndDate": "2026-05-01",
+    "offerStartDate": "2026-04-01",
+    "offerEndDate": "2026-05-01"
+  },
+  {
+    "id": "5",
+    "name": "Mayıs",
+    "csdStartDate": "2026-05-01",
+    "csdEndDate": "2026-06-01",
+    "offerStartDate": "2026-05-01",
+    "offerEndDate": "2026-06-01"
+  },
+  {
+    "id": "6",
+    "name": "Haziran",
+    "csdStartDate": "2026-06-01",
+    "csdEndDate": "2026-07-01",
+    "offerStartDate": "2026-06-01",
+    "offerEndDate": "2026-07-01"
+  },
+  {
+    "id": "7",
+    "name": "Temmuz",
+    "csdStartDate": "2026-07-01",
+    "csdEndDate": "2026-08-01",
+    "offerStartDate": "2026-07-01",
+    "offerEndDate": "2026-08-01"
+  },
+  {
+    "id": "8",
+    "name": "Ağustos",
+    "csdStartDate": "2026-08-01",
+    "csdEndDate": "2026-09-01",
+    "offerStartDate": "2026-08-01",
+    "offerEndDate": "2026-09-01"
+  },
+  {
+    "id": "9",
+    "name": "Eylül",
+    "csdStartDate": "2026-09-01",
+    "csdEndDate": "2026-10-01",
+    "offerStartDate": "2026-09-01",
+    "offerEndDate": "2026-10-01"
+  },
+  {
+    "id": "10",
+    "name": "Ekim",
+    "csdStartDate": "2026-10-01",
+    "csdEndDate": "2026-11-01",
+    "offerStartDate": "2026-10-01",
+    "offerEndDate": "2026-11-01"
+  },
+  {
+    "id": "11",
+    "name": "Kasım",
+    "csdStartDate": "2026-11-01",
+    "csdEndDate": "2026-12-01",
+    "offerStartDate": "2026-11-01",
+    "offerEndDate": "2026-12-01"
+  },
+  {
+    "id": "12",
+    "name": "Aralık",
+    "csdStartDate": "2026-12-01",
+    "csdEndDate": "2027-01-01",
+    "offerStartDate": "2026-12-01",
+    "offerEndDate": "2027-01-01"
+  }
+]
