@@ -1,0 +1,52 @@
+[
+  {
+    "FATIRS_NO": "AOS000000000003",
+    "FTIRSIP": "1",
+    "SUBE_KODU": 6,
+    "PROJE_KODU": "98-91",
+    "TARIH": "06.01.2026",
+    "ACIK13": "VR3EDYHP3SJ754371",
+    "FKOD": "1",
+    "CARI_KODU": "120-090-25391"
+  },
+  {
+    "FATIRS_NO": "AOS000000000004",
+    "FTIRSIP": "1",
+    "SUBE_KODU": 6,
+    "PROJE_KODU": "98-91",
+    "TARIH": "06.01.2026",
+    "ACIK13": "VR3EDYHP5SN562748",
+    "FKOD": "1",
+    "CARI_KODU": "120-090-260950"
+  },
+  {
+    "FATIRS_NO": "AOS000000000005",
+    "FTIRSIP": "1",
+    "SUBE_KODU": 6,
+    "PROJE_KODU": "98-91",
+    "TARIH": "06.01.2026",
+    "ACIK13": "VR3KAHPY5SS194014",
+    "FKOD": "1",
+    "CARI_KODU": "120-090-260822"
+  },
+  {
+    "FATIRS_NO": "AOS000000000040",
+    "FTIRSIP": "1",
+    "SUBE_KODU": 6,
+    "PROJE_KODU": "98-91",
+    "TARIH": "20.01.2026",
+    "ACIK13": "VF3YDG6F4SG052629",
+    "FKOD": "1",
+    "CARI_KODU": "120-090-260356"
+  },
+  {
+    "FATIRS_NO": "PE0202600000225",
+    "FTIRSIP": "2",
+    "SUBE_KODU": 6,
+    "PROJE_KODU": "98-91",
+    "TARIH": "14.01.2026",
+    "ACIK13": "VF3YDG6F4SG052629",
+    "FKOD": "2",
+    "CARI_KODU": "320-001-100"
+  }
+]

@@ -1,0 +1,1254 @@
+[
+  {
+    "TABLE_NAME": "A_FATURAANALIZ",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "A_FATURACARIHAREKETKONTROL",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "AA_CARIDEKIVADEFATURAUYUMSUZ",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "AA_FATCARIKARSILASTIRMA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "AFATUPRM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ALPATA_DIMESSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ALPATA_EFESSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ALPATA_FARKLIKDV_SATFAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ALPATA_PMSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ARAC",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ARACTIP",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Aylık_Subebazlı_TopSatıs",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "B_FATURAFORM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BI_V_GIDA2014_YNTM_SATINALMA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BI_V_GIDA2014_YNTM_SATISLAR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BKT_BİRİMLİ SATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bkt_carifatsay__",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BKT_FATSTRUT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BKT_HAFTALIKSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BKT_SATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_alisfiyat",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_banat_fatura_listesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_doguscay_fat_listesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_doguscay_fatlist_serbest",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_doguscay_USAK_fatlist_serbest",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BVG_earsiv_fatura_kontrol",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_efatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_efatura_kontrol",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_eti_fatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_faturano",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_haribo_fat_listesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_haribo_fatlist_serbest",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "BVG_pm_fatlist",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_satici_alici",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_satici_alici_tc",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_sthar_faturis_kontrol",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "bvg_tavuk_satis",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CariVKNAliciSaticiBakiye",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ccc_onmuhasebe_satiskoli",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CCC_Satis_irsaliye_kontrol",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMCARIADAYFIRSAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFATUIRS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATKRITER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATSEC",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATURUN",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATURUNEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMFIRSATURUNGRUP",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMSATAKT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMSATAKTEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMSATAKTSEC",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMSATAKTTIP",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMSATASAMASI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMTUMSATAKTEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "CRMTUMSATAKTSEC",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DBSFATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DBSFATURADESENEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DBSFATURAEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DBSFATURAMAS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DBSFATURATRA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Dogus_Fat_Kontrol",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "DZNFATUIRS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATCARIEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATCARIGENELEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATKISIT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATOLCUBIRIM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATOZELKOD",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATOZELKODEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATPRM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATSERI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATTESCARIEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATTMPZARF",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATUNO",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFaturaOlmasiGerekenler",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATYANIT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "EFATZARF",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ENTEGEFAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ENTEGEFATEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ESR_FATLİST",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ESR_SatısIsk",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATANA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATANAICM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATBASIM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATIADEESLEME",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATIRSSTHAROTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATKALEMILISKI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATTESCARIREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUEK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUIRS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUIRSDOVINFO",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUIRSEK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUIRSV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUISK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUNO",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATURAOTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATURAPLASIYER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATURASTSABIT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATURASURDURULEBILIRLIK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUREV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUSERI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FATUVADE",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "FORECASTHAZIRLIK_GUNCELSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "GIDA2000FATURAOTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "GIDA2004VADELIFATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "GIDAVADELIFATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "GUNLUK_SATISLAR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "haftalık satıs(fatura bazlı)",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "HataIleIadeGirilmisSatisFatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "HC_BinekAracGiderleri",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "HC_Fatura_Adedi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "IadeAlisFaturaListesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "IADEFATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKBELGENOREHBER_SATINALMA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATICIREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATINALMAEKRSERILIVIEW",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATINALMAREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATINALMAREHBERVIEW",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATINALMASERILIVIEW",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KKSATINALMAVIEW",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KOSULFATSATISANALIZI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KOSULSIPSATISANALIZI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KRTMASFIRMA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KRTMASFIRMAOTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "KURFATURASI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "MAKBKMMASRAFFAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "MALIGRUP_SATMALMALIYET",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "MALIGRUP_SATMALMALIYET_EKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "MGFATURAODEME",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "MUH_KONTROL_IRSALIYEFATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "NLDVAFAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "NLDVSFAT",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OM_Fatura_Kontrol_Satis",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OM_Fatura_Kontrol_Satis_2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OMR_ALIS_SATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ORT__FATALAN",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "ORT__TBLEFATDOV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_Arac_Maliyet_Tahmini",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_AracAlisSatis",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_AracInfo",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_AracOzet",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_AracOzet_ESKI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_CariListesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_CariListesi2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_Teklifler",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Otomotiv_EFES_TeklifSon",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivCariBakiye_STELLANTIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivCariBakiye_STELLANTIS_2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivMuhasebeAracSatisVeStokListesi",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivMuhasebeAracSatisVeStokListesi2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_2EL",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_ALIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_CARI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura_2EL",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura_ALIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura_Kampanya",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura_Kampanya2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_Fatura_Kampanya3",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OtomotivNakitAkisRaporu_OTV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OTOSERINUM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OTOSERINUMEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OTOSERINUMSTOK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "OzelFiyatGirilmisFaturalar",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "PLASIYERFATURADOKUMU",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "RISKFATUIRS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SAT12",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SAT12DUMY",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SAT12OTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATCIRO",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATCIROOTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATDUMY",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATIRGUVENLIK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATISTANUSK",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATMAL",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SATMALOTR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SBOLGERUHSATNO",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SFATUPRM",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SOZLESMEFATKALEMREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SOZLESMEFATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SOZLESMEFATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SOZLESMEFATURAEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "SSATIRAC",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "STHARFATURALIEKMALIYET",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TBLAFATUPRM",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLARACTIP",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMFIRSAT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMFIRSATKRITER",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMFIRSATURUN",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMFIRSATURUNGRUP",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMSATAKT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMSATAKTTIP",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLCRMSATASAMASI",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLDBSFATURAMAS",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLDBSFATURATRA",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLDEKOTRAEKTEVKIFAT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATILACDETAY",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATKALEM",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATKALEMDELIVERY",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATKALEMNOTES",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATKALEMTAX",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATKISIT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATMAS",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATMASTAX",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATNOTES",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATOLCUBIRIM",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATOZELKOD",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATPRM",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATSERI",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATTMPZARF",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATUNO",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATURA",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATURALOG",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATYANIT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLEFATZARF",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLENTEGEFAT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATIADEESLEME",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATKALEMILISKI",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUEK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRS",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRSDELETE",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRSDOVINFO",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRSEK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRSEKTEVKIFAT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUIRSSAHAEK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUISK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUNO",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATURASURDURULEBILIRLIK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUREV",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUSERI",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLFATUVADE",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKDVTEVKIFATTUR",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKOSFATDETANLZ",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKOSFATKLMANLZ",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKOSFATUSTANLZ",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKRTMASFIRMA",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLKURFATURASI",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLMAKBKMMASRAFFAT",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLMALIGRUP_SATMALMALIYET",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSAT12",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSAT12DUMY",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSATCIRO",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSATDUMY",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSATIRGUVENLIK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSATISTANUSK",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSATMAL",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSFATUPRM",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSOZLESMEFATURA",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLSSATIRAC",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLTEVKIFATKDVKOD",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLTEVKIFATKOD",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLTMPDBSFATURAMAS",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLTMPDBSFATURATRA",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLURETOTOMATIKMAKINE",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TBLYKDV_FATURA_DEVIR",
+    "TABLE_TYPE": "BASE TABLE"
+  },
+  {
+    "TABLE_NAME": "TEVKIFATKDVKOD",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TEVKIFATKOD",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TipHatasiOlanFaturalar",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TipiSaticiOlmayanCari",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TMPDBSFATURAEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "TOPSIPSATOZELKOD1REH",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "UICRMFIRSATURUN",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "URETOTOMATIKMAKINE",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "URETOTOMATIKMAKINEEKR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Urun_Bazli_Satis",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFAT_ISKONTOLAR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA_EARSIV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA_EARSIV_OZL",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA_EFOTOTEV",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA_HUR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VW_AYEFATKALEMACIKLAMA_TEKN",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwPortalCariFatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwPortalCariFatura2",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwPortalFaturaDetay",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaAlisFatura",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaAlisIrsaliye",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaBCek",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaBSen",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaBSen",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaCustomerMaster",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaFatuirs",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaFatuirs",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaFinanceEftOdeme",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaFinanceEftTahsilat",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaKasaTahsilat",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaKasaTahsilat",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaKrediKarti",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaKrediKartiTahsilat",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaMCek",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaMCek",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaMSen",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "VwSfaMSen",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaSatisIrsaliye",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaStockMaster",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwSfaStockTransfer",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "vwVwSfaMCek",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "Y_GSMFATURALARI",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YANITBAZLIFAT_RAP",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YG_PMSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YGEFESSATIS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YKDV_FATREHBER",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YKDV_FATUIRS",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YKDV_FATURA",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YKDV_FATURA_AY_YIL_DETAY",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YKDV_FATURA_DEVIR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YUSUF_ FATURALAR",
+    "TABLE_TYPE": "VIEW"
+  },
+  {
+    "TABLE_NAME": "YUSUF_BODRUMFATURALAR",
+    "TABLE_TYPE": "VIEW"
+  }
+]

@@ -14,6 +14,10 @@ export default function Sidebar() {
     { name: 'Prim Raporu', href: '/reports/commission', icon: BadgeDollarSign },
   ];
 
+  const netsisNav = [
+    { name: 'Sıfır Araç Satışları', href: '/reports/netsis/new-vehicles', icon: FileSpreadsheet },
+  ];
+
   const adminNav = [
     { name: 'Aylık Ayarlar', href: '/settings', icon: Settings },
   ];
@@ -52,6 +56,32 @@ export default function Sidebar() {
           })}
         </div>
         
+        <div className="mt-8 pt-8 border-t border-gray-800">
+          <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+            Netsis Raporları
+          </p>
+          <div className="space-y-1">
+            {netsisNav.map((item) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                    isActive 
+                      ? 'bg-emerald-600/20 text-emerald-400 border border-emerald-500/20' 
+                      : 'text-gray-400 hover:text-gray-100 hover:bg-gray-800'
+                  }`}
+                >
+                  <Icon className="w-5 h-5" />
+                  <span className="font-medium text-sm">{item.name}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="mt-8 pt-8 border-t border-gray-800">
           <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
             Yönetim
