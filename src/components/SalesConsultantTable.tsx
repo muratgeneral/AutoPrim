@@ -10,7 +10,7 @@ export const SalesConsultantTable: React.FC<SalesConsultantTableProps> = ({ data
   }
 
   const columns = [
-    'Sira', 'VIN', 'Marka', 'Product Line', 'Satış Danışmanı', 'Müşteri Ünvanı', 'Teklif Tarihi', 'CSD Date'
+    'Sira', 'VIN', 'Marka', 'Product Line', 'Satış Danışmanı', 'Müşteri Ünvanı', 'Teklif Tarihi', 'CSD Date', 'Teslim Tarihi'
   ];
 
   return (
@@ -27,7 +27,7 @@ export const SalesConsultantTable: React.FC<SalesConsultantTableProps> = ({ data
         </thead>
         <tbody className="divide-y divide-gray-700/50">
           {data.map((row, idx) => (
-            <tr key={idx} className="hover:bg-blue-900/20 transition-colors">
+            <tr key={idx} className={`transition-colors border-b border-gray-800/50 last:border-0 hover:bg-white/5 ${row.TAVMAKTAR ? 'bg-emerald-900/30' : ''}`}>
               <td className="px-6 py-3">{idx + 1}</td>
               <td className="px-6 py-3 font-mono text-gray-300">{row.VIN}</td>
               <td className="px-6 py-3">{row.MARKA}</td>
@@ -36,6 +36,7 @@ export const SalesConsultantTable: React.FC<SalesConsultantTableProps> = ({ data
               <td className="px-6 py-3 text-gray-300">{row.MUSTERI_UNVAN}</td>
               <td className="px-6 py-3">{row.TEKLIFTAR ? new Date(row.TEKLIFTAR).toLocaleDateString('tr-TR') : '-'}</td>
               <td className="px-6 py-3">{row.CSDDATE ? new Date(row.CSDDATE).toLocaleDateString('tr-TR') : '-'}</td>
+              <td className="px-6 py-3 font-medium text-emerald-300">{row.TAVMAKTAR ? new Date(row.TAVMAKTAR).toLocaleDateString('tr-TR') : '-'}</td>
             </tr>
           ))}
         </tbody>

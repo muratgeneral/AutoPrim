@@ -14,6 +14,7 @@ export const exportToExcelConsultant = async (data: any[], month: string, year: 
     { header: 'Müşteri Ünvanı', key: 'MUSTERI_UNVAN', width: 35 },
     { header: 'Teklif Tarihi', key: 'TEKLIFTAR', width: 22 },
     { header: 'CSD Date', key: 'CSDDATE', width: 22 },
+    { header: 'Teslim Tarihi', key: 'TAVMAKTAR', width: 22 },
   ];
 
   worksheet.columns = columns;
