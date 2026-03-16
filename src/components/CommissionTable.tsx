@@ -22,6 +22,7 @@ export function CommissionTable({ data }: Props) {
               <th className="px-6 py-4 font-semibold text-right">Kampanya Toplamı</th>
               <th className="px-6 py-4 font-semibold text-right">Prime Esas Tutar</th>
               <th className="px-6 py-4 font-semibold">Satış Danışmanı</th>
+              <th className="px-6 py-4 font-semibold">Kanal</th>
               <th className="px-6 py-4 font-semibold text-right">Bayi Prim</th>
               <th className="px-6 py-4 font-semibold text-right">SD Prim</th>
               <th className="px-6 py-4 font-semibold text-right">SM Prim</th>
@@ -61,6 +62,15 @@ export function CommissionTable({ data }: Props) {
                 </td>
                 <td className="px-6 py-4 font-medium text-gray-200">
                   {row['Satış Danışmanı']}
+                </td>
+                <td className="px-6 py-4">
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ${
+                    row['Kanal'] === 'Leasing' 
+                      ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' 
+                      : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                  }`}>
+                    {row['Kanal'] || '-'}
+                  </span>
                 </td>
                 <td className="px-6 py-4 text-right font-medium text-purple-400">
                   {new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(row['Bayi Prim'] || 0)}

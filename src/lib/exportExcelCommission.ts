@@ -16,6 +16,7 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     { header: 'Kampanya Toplamı', key: 'Kampanya Toplamı', width: 25 },
     { header: 'Prime Esas Tutar', key: 'Prime Esas Tutar', width: 25 },
     { header: 'Satış Danışmanı', key: 'Satış Danışmanı', width: 30 },
+    { header: 'Kanal', key: 'Kanal', width: 15 },
     { header: 'Bayi Prim', key: 'Bayi Prim', width: 20 },
     { header: 'SD Prim', key: 'SD Prim', width: 20 },
     { header: 'SM Prim', key: 'SM Prim', width: 20 },
@@ -80,6 +81,7 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
       'Kampanya Toplamı': kampToplam,
       'Prime Esas Tutar': primeEsas,
       'Satış Danışmanı': row['Satış Danışmanı'],
+      'Kanal': row['Kanal'] || '-',
       'Bayi Prim': row['Bayi Prim'] || 0,
       'SD Prim': row['SD Prim'] || 0,
       'SM Prim': row['SM Prim'] || 0,
@@ -117,6 +119,7 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
     'Kampanya Toplamı': totalKampanyaSum,
     'Prime Esas Tutar': totalPrimeEsas,
     'Satış Danışmanı': '',
+    'Kanal': '',
     'Bayi Prim': totalBayiPrim,
     'SD Prim': totalSdPrim,
     'SM Prim': totalSmPrim,
@@ -139,7 +142,7 @@ export const exportToExcelCommission = async (data: any[], startDate: string, en
 
   // Add Metadata Title
   worksheet.insertRow(1, [`Prim Raporu (${startDate} - ${endDate})`]);
-  worksheet.mergeCells('A1:N1');
+  worksheet.mergeCells('A1:O1');
   const titleCell = worksheet.getCell('A1');
   titleCell.font = { size: 14, bold: true };
   titleCell.alignment = { vertical: 'middle', horizontal: 'center' };

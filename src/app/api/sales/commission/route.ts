@@ -25,7 +25,11 @@ export async function GET(request: Request) {
           ISNULL(a.DISTPROMTUT, 0) AS [Promosyon],
           kamp_agg.KampanyaDetay AS [Kampanya],
           ISNULL(kamp_agg.KampanyaToplam, 0) AS [Kampanya Toplamı],
-          k.ADISOY AS [Satış Danışmanı]
+          k.ADISOY AS [Satış Danışmanı],
+          CASE 
+              WHEN f.UNVAN LIKE '%LEASING%' OR f.UNVAN LIKE '%FİNANSAL%KİRALAMA%' THEN 'Leasing'
+              ELSE 'B2C'
+          END AS [Kanal]
       FROM [37.131.251.91, 10168].[peugeotdms].[dbo].[ATEKLIF0] AS t
 
       JOIN [37.131.251.91, 10168].[peugeotdms].[dbo].[GNLKULL0] AS k
@@ -35,6 +39,9 @@ export async function GET(request: Request) {
       JOIN [37.131.251.91, 10168].[peugeotdms].[dbo].[AARAC0] AS a
           ON a.SASINO = t.SASINO
          AND a.SIRKOD = t.SIRKOD
+         
+      LEFT JOIN [37.131.251.91, 10168].[peugeotdms].[dbo].[GNLFIRMA0] AS f
+          ON f.VERGINO = t.FIRMA AND f.SIRKOD = t.SIRKOD
 
       -- 1) Satınalma (Gelen) Faturaları (En güncel fatura)
       OUTER APPLY (
