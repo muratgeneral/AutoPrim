@@ -42,7 +42,7 @@ export async function GET(request: Request) {
               fm_sub.FATNO
           FROM [37.131.251.91, 10168].[peugeotdms].[dbo].[UFATMAS0] fm_sub
           JOIN [37.131.251.91, 10168].[peugeotdms].[dbo].[UFATDET0] fd_sub ON fm_sub.FATNO = fd_sub.FATNO
-          WHERE fm_sub.EFATNO LIKE 'PE0%' AND fd_sub.SASINO = a.SASINO
+          WHERE fm_sub.EFATNO LIKE 'PE%' AND fd_sub.SASINO = a.SASINO
           ORDER BY fm_sub.FATTAR DESC, fm_sub.FATNO DESC
       ) fm
 
