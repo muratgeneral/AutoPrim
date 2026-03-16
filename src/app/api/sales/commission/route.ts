@@ -27,7 +27,7 @@ export async function GET(request: Request) {
           ISNULL(kamp_agg.KampanyaToplam, 0) AS [Kampanya Toplamı],
           k.ADISOY AS [Satış Danışmanı],
           CASE 
-              WHEN f.UNVAN LIKE '%LEASING%' OR f.UNVAN LIKE '%FİNANSAL%KİRALAMA%' THEN 'Leasing'
+              WHEN f.UNVAN LIKE '%LEASING%' OR f.UNVAN LIKE '%F_NANSAL%K_RALAMA%' THEN 'Leasing'
               ELSE 'B2C'
           END AS [Kanal]
       FROM [37.131.251.91, 10168].[peugeotdms].[dbo].[ATEKLIF0] AS t
