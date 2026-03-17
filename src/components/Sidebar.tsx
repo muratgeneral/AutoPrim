@@ -1,11 +1,16 @@
 "use client";
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, FileSpreadsheet, Users, LayoutDashboard, Car, BadgeDollarSign, Settings } from 'lucide-react';
+import { Home, FileSpreadsheet, Users, LayoutDashboard, Car, BadgeDollarSign, Settings, LogOut, User as UserIcon, KeyRound } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
+import { ChangePasswordModal } from './ChangePasswordModal';
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { user, logout } = useAuth();
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 
   const menuItems = [
     { name: 'Ana Sayfa', href: '/', icon: Home },
@@ -109,8 +114,43 @@ export default function Sidebar() {
         </div>
       </div>
       
-      <div className="mt-auto p-6 text-xs text-gray-600">
-        &copy; 2026 Alpata Teknoloji
+      <div className="mt-auto border-t border-gray-800">
+        {user && (
+          <div className="p-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400">
+                <UserIcon className="w-4 h-4" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-gray-200">{user.username}</span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider">{user.role}</span>
+              </div>
+            </div>
+            <div className="flex gap-1">
+              <button 
+                onClick={() => setIsPasswordModalOpen(true)}
+                className="p-2 rounded-lg text-gray-500 hover:text-indigo-400 hover:bg-indigo-500/10 transition-colors"
+                title="Şifre Değiştir"
+              >
+                <KeyRound className="w-4 h-4" />
+              </button>
+              <button 
+                onClick={logout}
+                className="p-2 rounded-lg text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                title="Çıkış Yap"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+        <ChangePasswordModal 
+          isOpen={isPasswordModalOpen} 
+          onClose={() => setIsPasswordModalOpen(false)} 
+        />
+        <div className="p-4 pt-2 text-xs text-gray-600 text-center">
+          &copy; 2026 Alpata Teknoloji
+        </div>
       </div>
     </div>
   );

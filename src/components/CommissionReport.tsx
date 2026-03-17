@@ -5,9 +5,11 @@ import { CommissionTable } from './CommissionTable';
 import { exportToExcelCommission } from '@/lib/exportExcelCommission';
 import { Calendar, Download, RefreshCw, BadgeDollarSign, Car, Code } from 'lucide-react';
 import { ProductLineSummaryModal } from './ProductLineSummaryModal';
+import { useAuth } from '@/context/AuthContext';
 
 export default function CommissionReport() {
-  const [sirkod, setSirkod] = useState<string>("1");
+  const { user } = useAuth();
+  const [sirkod, setSirkod] = useState<string>(user?.role === 'superadmin' ? '1' : (user?.allowedBrands[0] || "1"));
   const [selectedMonthId, setSelectedMonthId] = useState<string>("1");
   const [monthsData, setMonthsData] = useState<any[]>([]);
   
@@ -63,6 +65,36 @@ export default function CommissionReport() {
       }
     }
 
+    // Validate Citroen Settings
+    if (sirkod === "2") {
+      const isCitroenSettingsMissing = 
+        month.citroenDealerPerc === undefined || 
+        month.citroenSmPerc === undefined || 
+        month.citroenSdPerc === undefined || 
+        month.citroenSupportPerc === undefined;
+        
+      if (isCitroenSettingsMissing) {
+        setError("Seçili ay için Citroen Prim Oranları eksik. Lütfen yandaki 'Ayarlar' sayfasından bu değerleri doldurup kaydedin.");
+        setData([]); 
+        return;
+      }
+    }
+
+    // Validate Opel Settings
+    if (sirkod === "3") {
+      const isOpelSettingsMissing = 
+        !month.opelMatrixMultiplier || 
+        !month.opelSmPerc || 
+        !month.opelSdPerc || 
+        !month.opelSupportPerc;
+        
+      if (isOpelSettingsMissing) {
+        setError("Seçili ay için Opel Hedef Çarpanı ve Dağıtım Oranları eksik veya sıfır. Lütfen yandaki 'Ayarlar' sayfasından bu değerleri doldurup kaydedin.");
+        setData([]); // Clear existing data to prevent confusion
+        return;
+      }
+    }
+
     setLoading(true);
     setError(null);
     try {
@@ -94,6 +126,69 @@ export default function CommissionReport() {
             'SM Prim': smPrim,
             'Destek Prim': destekPrim,
             'Bonus Prim': 0 // Varsayılan olarak 0 eklendi
+          };
+        });
+      } else if (sirkod === "2") { // Citroen Logic
+        fetchedData = fetchedData.map((row: any) => {
+          const primeEsas = (row['Net Tutar'] || 0) - (row['Promosyon'] || 0) - (row['Kampanya Toplamı'] || 0);
+          
+          const bayiPrim = primeEsas * ((month.citroenDealerPerc || 0) / 100);
+          const smPrim = primeEsas * ((month.citroenSmPerc || 0) / 100);
+          const sdPrim = primeEsas * ((month.citroenSdPerc || 0) / 100);
+          const destekPrim = primeEsas * ((month.citroenSupportPerc || 0) / 100);
+          
+          return {
+            ...row,
+            'Bayi Prim': bayiPrim,
+            'SD Prim': sdPrim,
+            'SM Prim': smPrim,
+            'Destek Prim': destekPrim,
+            'Bonus Prim': 0
+          };
+        });
+      } else if (sirkod === "3") { // Opel Logic
+        fetchedData = fetchedData.map((row: any) => {
+          const ustModel = (row['Model'] || "").toUpperCase();
+          let vehicleCategory = "BINEK";
+          
+          if (ustModel.includes("FRONTERA")) {
+             vehicleCategory = "FRONTERA";
+          } else if (ustModel.includes("COMBO") || ustModel.includes("VIVARO") || ustModel.includes("ZAFIRA") || ustModel.includes("MOVANO")) {
+             vehicleCategory = "HTA";
+          }
+          
+          const primeEsas = (row['Net Tutar'] || 0) - (row['Promosyon'] || 0) - (row['Kampanya Toplamı'] || 0);
+          
+          let basePerc = month.opelPassengerBasePerc !== undefined ? month.opelPassengerBasePerc : 0.5;
+          let teamFixedPool = month.opelPassengerTeamFixed !== undefined ? month.opelPassengerTeamFixed : 6000;
+          
+          if (vehicleCategory === "FRONTERA") {
+             basePerc = month.opelFronteraBasePerc !== undefined ? month.opelFronteraBasePerc : 1.0;
+             teamFixedPool = month.opelFronteraTeamFixed !== undefined ? month.opelFronteraTeamFixed : 6000;
+          } else if (vehicleCategory === "HTA") {
+             basePerc = month.opelCommercialBasePerc !== undefined ? month.opelCommercialBasePerc : 1.0;
+             teamFixedPool = month.opelCommercialTeamFixed !== undefined ? month.opelCommercialTeamFixed : 10000;
+          }
+          
+          const matrixMultiplier = (month.opelMatrixMultiplier || 0) / 100;
+          
+          // Bayi Primi
+          const bayiPrim = primeEsas * (basePerc / 100) * matrixMultiplier;
+          
+          // Ekip Primi Dağıtımı (Kullanıcı Formülü: Sabit Tutar * Bayi Prim Oranı(Çarpanı))
+          const ekipPrimTotal = teamFixedPool * matrixMultiplier;
+          
+          const smPrim = ekipPrimTotal * ((month.opelSmPerc || 0) / 100);
+          const sdPrim = ekipPrimTotal * ((month.opelSdPerc || 0) / 100);
+          const destekPrim = ekipPrimTotal * ((month.opelSupportPerc || 0) / 100);
+
+          return {
+            ...row,
+            'Bayi Prim': bayiPrim,
+            'SD Prim': sdPrim,
+            'SM Prim': smPrim,
+            'Destek Prim': destekPrim,
+            'Bonus Prim': 0
           };
         });
       } else {
@@ -156,13 +251,14 @@ export default function CommissionReport() {
               <div className="h-[38px] flex items-center bg-gray-800/80 border border-gray-700/50 rounded-xl px-3 focus-within:ring-2 focus-within:ring-purple-500/50 focus-within:border-purple-500/50 transition-all">
                 <Car className="w-5 h-5 text-purple-400 mr-2 shrink-0" />
                 <select 
-                  className="bg-transparent text-gray-200 text-sm outline-none w-full appearance-none cursor-pointer"
+                  className="bg-transparent text-gray-200 text-sm outline-none w-full appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   value={sirkod}
                   onChange={(e) => setSirkod(e.target.value)}
+                  disabled={user?.role !== 'superadmin' && user?.allowedBrands.length === 1}
                 >
-                  <option value="1" className="bg-gray-800">Peugeot</option>
-                  <option value="2" className="bg-gray-800">Citroen</option>
-                  <option value="3" className="bg-gray-800">Opel</option>
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('1')) && <option value="1" className="bg-gray-800">Peugeot</option>}
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('2')) && <option value="2" className="bg-gray-800">Citroen</option>}
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('3')) && <option value="3" className="bg-gray-800">Opel</option>}
                 </select>
               </div>
             </div>

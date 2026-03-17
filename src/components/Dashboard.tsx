@@ -5,9 +5,11 @@ import { SalesTable } from './SalesTable';
 import { exportToExcel } from '@/lib/exportExcel';
 import { Calendar, Download, RefreshCw, Car, Code } from 'lucide-react';
 import { ProductLineSummaryModal } from './ProductLineSummaryModal';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Dashboard() {
-  const [sirkod, setSirkod] = useState<string>("1");
+  const { user } = useAuth();
+  const [sirkod, setSirkod] = useState<string>(user?.role === 'superadmin' ? '1' : (user?.allowedBrands[0] || "1"));
   const [selectedMonthId, setSelectedMonthId] = useState<string>("1");
   const [monthsData, setMonthsData] = useState<any[]>([]);
   
@@ -114,13 +116,14 @@ export default function Dashboard() {
               <div className="h-[38px] flex items-center bg-gray-800/80 border border-gray-700/50 rounded-xl px-3 focus-within:ring-2 focus-within:ring-blue-500/50 focus-within:border-blue-500/50 transition-all">
                 <Car className="w-5 h-5 text-blue-400 mr-2 shrink-0" />
                 <select 
-                  className="bg-transparent text-gray-200 text-sm outline-none w-full appearance-none cursor-pointer"
+                  className="bg-transparent text-gray-200 text-sm outline-none w-full appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   value={sirkod}
                   onChange={(e) => setSirkod(e.target.value)}
+                  disabled={user?.role !== 'superadmin' && user?.allowedBrands.length === 1}
                 >
-                  <option value="1" className="bg-gray-800">Peugeot</option>
-                  <option value="2" className="bg-gray-800">Citroen</option>
-                  <option value="3" className="bg-gray-800">Opel</option>
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('1')) && <option value="1" className="bg-gray-800">Peugeot</option>}
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('2')) && <option value="2" className="bg-gray-800">Citroen</option>}
+                  {(user?.role === 'superadmin' || user?.allowedBrands.includes('3')) && <option value="3" className="bg-gray-800">Opel</option>}
                 </select>
               </div>
             </div>

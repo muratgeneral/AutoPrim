@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "username": "admin",
+    "password": "P@ssw0rd",
+    "role": "superadmin",
+    "allowedBrands": ["1", "2", "3"]
+  },
+  {
+    "id": "2",
+    "username": "peugeot",
+    "password": "123",
+    "role": "user",
+    "allowedBrands": ["1"]
+  },
+  {
+    "id": "3",
+    "username": "citroen",
+    "password": "123",
+    "role": "user",
+    "allowedBrands": ["2"]
+  },
+  {
+    "id": "4",
+    "username": "opel",
+    "password": "123",
+    "role": "user",
+    "allowedBrands": ["3"]
+  },
+  {
+    "id": "5",
+    "username": "muhasebe",
+    "password": "123",
+    "role": "superadmin",
+    "allowedBrands": ["1", "2", "3"]
+  },
+  {
+    "id": "6",
+    "username": "general",
+    "password": "123",
+    "role": "superadmin",
+    "allowedBrands": ["1", "2", "3"]
+  }
+]

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Sidebar from '@/components/Sidebar';
 import { Save, Calendar, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 
 interface MonthSetting {
   id: string;
@@ -17,9 +17,24 @@ interface MonthSetting {
   managerPerc?: number;
   consultantPerc?: number;
   supportPerc?: number;
+  opelMatrixMultiplier?: number;
+  opelSmPerc?: number;
+  opelSdPerc?: number;
+  opelSupportPerc?: number;
+  citroenDealerPerc?: number;
+  citroenSmPerc?: number;
+  citroenSdPerc?: number;
+  citroenSupportPerc?: number;
+  opelPassengerBasePerc?: number;
+  opelFronteraBasePerc?: number;
+  opelCommercialBasePerc?: number;
+  opelPassengerTeamFixed?: number;
+  opelFronteraTeamFixed?: number;
+  opelCommercialTeamFixed?: number;
 }
 
 export default function SettingsPage() {
+  const { user } = useAuth();
   const [months, setMonths] = useState<MonthSetting[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -72,8 +87,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="flex h-screen bg-[#050810] overflow-hidden">
-      <Sidebar />
+    <div className="flex h-screen overflow-hidden">
       <div className="flex-1 overflow-y-auto">
         <div className="min-h-screen p-4 md:p-8 font-sans selection:bg-blue-500/30 w-full mb-20">
           <div className="max-w-5xl mx-auto space-y-6">
@@ -168,6 +182,7 @@ export default function SettingsPage() {
                       </div>
 
                       {/* Targets & Percentages */}
+                      {(user?.role === 'superadmin' || user?.allowedBrands.includes('1')) && (
                       <div className="pt-3 border-t border-gray-800/60">
                         <label className="text-xs text-purple-400 font-semibold mb-3 block uppercase tracking-wider">Peugeot Hedef & Prim Oranları</label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -270,6 +285,260 @@ export default function SettingsPage() {
 
                         </div>
                       </div>
+                      )}
+
+                      {/* Citroen Targets & Percentages */}
+                      {(user?.role === 'superadmin' || user?.allowedBrands.includes('2')) && (
+                      <div className="pt-3 border-t border-gray-800/60 mt-4">
+                        <label className="text-xs text-red-400 font-semibold mb-3 block uppercase tracking-wider">Citroen Prim Oranları</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          
+                          {/* Dealer % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Bayi Prim Oranı (Çarpan) (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" step="0.001"
+                                className="bg-gray-800/50 border border-red-900/40 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-red-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                value={month.citroenDealerPerc !== undefined ? month.citroenDealerPerc : 0} 
+                                onChange={(e) => handleDateChange(month.id, 'citroenDealerPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-red-500/60">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Manager % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Müdürü (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" step="0.001"
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-red-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.citroenSmPerc !== undefined ? month.citroenSmPerc : 0} 
+                                onChange={(e) => handleDateChange(month.id, 'citroenSmPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Consultant % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Danışmanı (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" step="0.001"
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-red-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.citroenSdPerc !== undefined ? month.citroenSdPerc : 0} 
+                                onChange={(e) => handleDateChange(month.id, 'citroenSdPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Support % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Destek Personeli (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" step="0.001"
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-red-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.citroenSupportPerc !== undefined ? month.citroenSupportPerc : 0} 
+                                onChange={(e) => handleDateChange(month.id, 'citroenSupportPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      )}
+
+
+                      {/* Opel Targets & Percentages */}
+                      {(user?.role === 'superadmin' || user?.allowedBrands.includes('3')) && (
+                      <div className="pt-3 border-t border-gray-800/60 mt-4">
+                        <label className="text-xs text-yellow-400 font-semibold mb-3 block uppercase tracking-wider">Opel (Matris) Çarpan & Prim Oranları</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          
+                          {/* Matrix Multiplier */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Bayi Prim Oranı (Hedef Çarpanı) (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-yellow-900/40 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-yellow-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                value={month.opelMatrixMultiplier || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'opelMatrixMultiplier', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-yellow-500/60">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Opel Manager % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Müdürü (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-yellow-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.opelSmPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'opelSmPerc', parseFloat(e.target.value) || 0)}
+                              />
+                              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Opel Consultant % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Satış Danışmanı (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-yellow-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.opelSdPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'opelSdPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Opel Support % */}
+                          <div>
+                            <span className="text-[11px] text-gray-500 font-medium mb-1 block">Destek Personeli (%)</span>
+                            <div className="relative">
+                              <input 
+                                type="number" 
+                                className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-yellow-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                value={month.opelSupportPerc || 0} 
+                                onChange={(e) => handleDateChange(month.id, 'opelSupportPerc', parseFloat(e.target.value) || 0)}
+                              />
+                               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                %
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        
+                        {/* Opel Vehicle Category Specific Rules */}
+                        <div className="mt-4 pt-3 border-t border-gray-800/60">
+                           <label className="text-xs text-blue-400 font-semibold mb-3 block uppercase tracking-wider">Araç Tipi Baz Primleri & Sabit Ekip Tutarları</label>
+                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              
+                              {/* Binek Base % */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">Binek Baz Prim (%)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number" step="0.1"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                    value={month.opelPassengerBasePerc !== undefined ? month.opelPassengerBasePerc : 0.5} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelPassengerBasePerc', parseFloat(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    %
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* Binek Team Fixed */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">Binek Sabit Ekip Tipi (TL)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                    value={month.opelPassengerTeamFixed !== undefined ? month.opelPassengerTeamFixed : 6000} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelPassengerTeamFixed', parseInt(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    ₺
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* Frontera Base % */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">Frontera Baz Prim (%)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number" step="0.1"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                    value={month.opelFronteraBasePerc !== undefined ? month.opelFronteraBasePerc : 1.0} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelFronteraBasePerc', parseFloat(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    %
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* Frontera Team Fixed */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">Frontera Sabit Ekip Primi (TL)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                    value={month.opelFronteraTeamFixed !== undefined ? month.opelFronteraTeamFixed : 6000} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelFronteraTeamFixed', parseInt(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    ₺
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* HTA Base % */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">HTA (Ticari) Baz Prim (%)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number" step="0.1"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pl-9"
+                                    value={month.opelCommercialBasePerc !== undefined ? month.opelCommercialBasePerc : 1.0} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelCommercialBasePerc', parseFloat(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    %
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* HTA Team Fixed */}
+                              <div>
+                                <span className="text-[11px] text-gray-500 font-medium mb-1 block">HTA (Ticari) Sabit Ekip Primi (TL)</span>
+                                <div className="relative">
+                                  <input 
+                                    type="number"
+                                    className="bg-gray-800/50 border border-gray-700/50 text-gray-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500/50 block w-full px-3 py-2 outline-none transition-all pr-8"
+                                    value={month.opelCommercialTeamFixed !== undefined ? month.opelCommercialTeamFixed : 10000} 
+                                    onChange={(e) => handleDateChange(month.id, 'opelCommercialTeamFixed', parseInt(e.target.value) || 0)}
+                                  />
+                                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500 font-medium text-xs">
+                                    ₺
+                                  </div>
+                                </div>
+                              </div>
+
+                           </div>
+                        </div>
+                      </div>
+                      )}
                     </div>
                   </div>
                 ))}
